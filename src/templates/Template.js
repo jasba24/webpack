@@ -1,8 +1,11 @@
-import getData from '../utils/getData.js';
+import getData from '@utils/getData.js';
+import github from "@images/github.png"
+import instagram from "@images/instagram.png"
+import twitter from "@images/twitter.png"
 
-const Template = async () => {
-  const data = await getData();
-  const view = `
+const Template = async() => {
+    const data = await getData();
+    const view = `
     <div class="About">
       <div class="card">
         <div class="card_details">
@@ -17,26 +20,26 @@ const Template = async () => {
           <p class="card_value">${data.name.first} ${data.name.last}</p>
         </div>
         <div class="card_userdata">
-          <ul>
+          <ul>normales
             <li>${data.email}</li>
             <li>${data.location.country}</li>
           </ul>
         </div>
         <div class="card_social">
           <a href="https://twitter.com/gndx">
-            <img src="../src/assets/images/twitter.png" />
+            <img src="${twitter}" />
           </a>
           <a href="https://github.com/gndx">
-            <img src="../src/assets/images/github.png" />
+            <img src="${github}" />
           </a>
           <a href="https://instagram.com/gndx">
-            <img src="../src/assets/images/instagram.png" />
+            <img src="${instagram}" />
           </a>
         </div>
       </div>
     </div>
   `;
-  return view;
+    return view;
 };
 
 export default Template;
